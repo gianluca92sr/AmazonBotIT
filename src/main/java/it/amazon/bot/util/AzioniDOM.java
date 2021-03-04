@@ -111,9 +111,9 @@ public class AzioniDOM {
 		}
 		
 		try {
-			hold(1);
+			hold(2);
 			driver.findElement(By.id("siNoCoverage-announce")).click();
-			hold(1);
+			hold(2);
 			driver.findElement(By.id("hlb-view-cart-announce")).click();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -127,7 +127,7 @@ public class AzioniDOM {
 		driver.findElement(By.name("proceedToRetailCheckout")).click();
 		//gestisce il caso di utente non connesso
 		try {
-			hold(1);
+			hold(2);
 			try {
 				driver.findElement(By.id("ap_email")).sendKeys(datiAmazon.get("EMAIL-AMAZON").toString());
 				driver.findElement(By.id("continue")).click();
@@ -136,7 +136,7 @@ public class AzioniDOM {
 			}
 			
 			try {
-				hold(1);
+				hold(2);
 				driver.findElement(By.id("ap_password")).sendKeys(datiAmazon.get("PASS-AMAZON").toString());
 				driver.findElement(By.id("signInSubmit")).click();
 			} catch (Exception e) {
@@ -166,6 +166,13 @@ public class AzioniDOM {
 			} catch (Exception e) {
 				
 			}
+			
+			try {
+				driver.findElement(By.xpath("//input[@name='placeYourOrder1']")).click();
+			} catch (Exception e) {
+				
+			}
+			
 			
 		} catch (InterruptedException e) {
 			e.printStackTrace();

@@ -55,15 +55,15 @@ public class Main {
 			dom.aggiungiAlCarrello(driver);
 		
 		//Invia una mail per far avvertire l'acquirente e per concludere la fase finale d'acquisto
-		MailOrdine mail = new MailOrdine();
-		mail.invioMailOrdine(datiAmazon);
+//		MailOrdine mail = new MailOrdine();
+//		mail.invioMailOrdine(datiAmazon);
 		
 		//Skippa offerta Prime se presente
 		dom.skipPrime(driver);
 		
 		//Arriva alla fase di pagamento dell'ordine
 		dom.procediOrdine(driver, datiAmazon);
-//		System.out.println("Ordine effettuato");
+		System.out.println("Ordine effettuato");
 	}
 
 }
