@@ -20,6 +20,14 @@ public class AzioniDOM {
 		while(true) {
 			
 			try {
+				prezzoProdotto = driver.findElement(By.id("mbc-price-1")).getText();
+				prezzoPresente = true;
+				break;
+			} catch (Exception e) {
+				myLog.info("Prezzo 0 non trovato");
+			}
+			
+			try {
 				prezzoProdotto = driver.findElement(By.id("newBuyBoxPrice")).getText();
 				prezzoPresente = true;
 				break;
@@ -49,8 +57,18 @@ public class AzioniDOM {
 			driver.navigate().refresh();
 		}
 		
-		String venditore = driver.findElement(By.id("merchant-info")).getText();
-		
+		String venditore = "";
+				
+				try {
+					venditore =	driver.findElement(By.id("merchant-info")).getText();
+				}catch (Exception e) {
+					try {
+						venditore =	driver.findElement(By.xpath("//span[@class='a-size-small mbcMerchantName']")).getText();
+					} catch (Exception e2) {
+						// TODO: handle exception
+					}
+				}
+				
 		hold(4);
 		
 		while(!venditore.contains("Amazon")) {
@@ -74,7 +92,24 @@ public class AzioniDOM {
 	
 	public void aggiungiAlCarrello(WebDriver driver) throws InterruptedException {
 
-		driver.findElement(By.id("add-to-cart-button")).click();
+		try {
+			driver.findElement(By.id("add-to-cart-button")).click();
+		}catch (Exception e) {
+			
+		}
+		
+		try {
+			driver.findElement(By.id("attach-view-cart-button-form")).click();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		try {
+			driver.findElement(By.xpath("//input[@aria-labelledby='mbc-buybutton-addtocart-1-announce']")).getText();
+		}catch (Exception e) {
+			
+		}
+		
 		try {
 			hold(1);
 			driver.findElement(By.id("siNoCoverage-announce")).click();
@@ -108,15 +143,15 @@ public class AzioniDOM {
 				myLog.info("No Password richiesta");
 			}
 			
-			try {
-				hold(1);
-				driver.findElement(By.xpath("auth-mfa-otpcode"));
-			} catch (Exception e) {
-				myLog.info("OTP richiesto");
-				MailOrdine mail = new MailOrdine();
-				mail.invioMailOTP(datiAmazon);
-				//non utilizza gli ultimi due try in questo caso
-			}
+//			try {
+//				hold(1);
+//				driver.findElement(By.xpath("auth-mfa-otpcode"));
+//			} catch (Exception e) {
+//				myLog.info("OTP richiesto");
+//				MailOrdine mail = new MailOrdine();
+//				mail.invioMailOTP(datiAmazon);
+//				//non utilizza gli ultimi due try in questo caso
+//			}
 			
 			//se non hai prime seleziona il primo valore 
 			try {
@@ -158,5 +193,5 @@ public class AzioniDOM {
 		}
 		
 	}
-	
+
 }
