@@ -104,9 +104,22 @@ public class AzioniDOM {
 			hold(1);
 			driver.findElement(By.id("attach-view-cart-button-form")).click();
 		}catch (Exception e) {
+
+		} 
+		
+		try {
+			hold(1);
+			driver.findElement(By.xpath("//input[@aria-labelledby='attachSiNoCoverage-announce']")).click();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		try {
 			hold(1);
 			driver.findElement(By.id("attachSiNoCoverage-announce")).click();
-		} 
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 
 		try {
 			hold(1);
@@ -201,6 +214,12 @@ public class AzioniDOM {
 			driver.findElement(By.id("prime-no-thanks")).click();
 		} catch (Exception e) {
 			myLog.info("No pagina Prime");
+		}
+		
+		try {
+			driver.findElement(By.id("prime-declineCTA")).click();
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 		
 	}
