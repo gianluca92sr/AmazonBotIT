@@ -20,7 +20,7 @@ public class AzioniDOM {
 		while(true) {
 			
 			try {
-				prezzoProdotto = driver.findElement(By.id("mbc-price-1")).getText();
+				prezzoProdotto = driver.findElement(By.id("priceblock_ourprice")).getText();
 				prezzoPresente = true;
 				break;
 			} catch (Exception e) {
@@ -44,7 +44,7 @@ public class AzioniDOM {
 			}
 			
 			try {
-				prezzoProdotto = driver.findElement(By.id("priceblock_ourprice")).getText();
+				prezzoProdotto = driver.findElement(By.id("mbc-price-1")).getText();
 				prezzoPresente = true;
 				break;
 			} catch (Exception e) {
@@ -93,19 +93,31 @@ public class AzioniDOM {
 	public void aggiungiAlCarrello(WebDriver driver) throws InterruptedException {
 
 		try {
+			hold(1);
 			driver.findElement(By.id("add-to-cart-button")).click();
+			hold(1);
 		}catch (Exception e) {
 			
 		}
 		
 		try {
+			hold(1);
 			driver.findElement(By.id("attach-view-cart-button-form")).click();
-		} catch (Exception e) {
-			// TODO: handle exception
+		}catch (Exception e) {
+			hold(1);
+			driver.findElement(By.id("attachSiNoCoverage-announce")).click();
+		} 
+
+		try {
+			hold(1);
+		driver.findElement(By.xpath("//input[@aria-labelledby='mbc-buybutton-addtocart-1-announce']")).click();
+		}catch (Exception e) {
+			
 		}
 		
 		try {
-			driver.findElement(By.xpath("//input[@aria-labelledby='mbc-buybutton-addtocart-1-announce']")).getText();
+			hold(1);
+			driver.findElement(By.xpath("//input[@aria-labelledby='attach-sidesheet-view-cart-button-announce']")).click();
 		}catch (Exception e) {
 			
 		}
@@ -115,15 +127,17 @@ public class AzioniDOM {
 			driver.findElement(By.id("siNoCoverage-announce")).click();
 			hold(2);
 			driver.findElement(By.id("hlb-view-cart-announce")).click();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-			throw e;
+		} catch (Exception e) {
+			return;
 		}
+		
 
 	}
 	
 	public void procediOrdine(WebDriver driver, Map<String, Object> datiAmazon) throws InterruptedException {
 		
+
+		hold(1);
 		driver.findElement(By.name("proceedToRetailCheckout")).click();
 		//gestisce il caso di utente non connesso
 		try {
