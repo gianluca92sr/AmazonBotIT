@@ -27,7 +27,7 @@ public class Main {
 
 		//Optional Google account for Chrome
 		ChromeOptions options = new ChromeOptions();
-		if (amazonData.get("GOOGLE") != null && amazonData.get("GOOGLE").toString().equals("SI")) {
+		if (amazonData.get("GOOGLE") != null && amazonData.get("GOOGLE").toString().equals("YES")) {
 			options.addArguments("user-data-dir=" + amazonData.get("PATH_GOOGLE").toString());
 		}
 		
