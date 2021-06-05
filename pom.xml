@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>it</groupId>
   <artifactId>amazon.bot</artifactId>
-  <version>0.5.0-BETA</version>
+  <version>1.0.0-BETA</version>
   <name>AmazonPurchaseBot-IT</name>
   
   <dependencies>
