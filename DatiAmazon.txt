@@ -1,7 +1,7 @@
-GOOGLE=NO
+GOOGLE=NO (default)
 PATH_GOOGLE= example C:\\Users\\paolo\\AppData\\Local\\Google\\Chrome\\User Data Selenium
-EMAIL-GMAIL=
-PASS-GMAIL=
+EMAIL-GMAIL= (optional - beta)
+PASS-GMAIL= (optional - beta)
 EMAIL-AMAZON=
 PASS-AMAZON=
 URL=
