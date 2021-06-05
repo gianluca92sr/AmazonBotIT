@@ -9,7 +9,7 @@ ChromeDriver for Selenium, the provided one is compatible with Chrome 91
 1. Download AmazonBotIT zip file and extract it in your favorite folder
 2. Download the correct version of chromeDriver if the program won't start <a href="https://chromedriver.chromium.org/downloads">ChromeDriverDownloads</a> and add it into the previous folder
 3. Fill the txt file
-4. Start the jar file (compatible only with amazon.it, if you want other amazon you have to adapt the souce code)
+4. Start the LaunchBat.bat file (compatible only with amazon.it, if you want other amazon you have to adapt the souce code)
 
 # Donations
 My job is on enterprise code developing.
