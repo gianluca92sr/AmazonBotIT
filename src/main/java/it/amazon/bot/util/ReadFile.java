@@ -11,28 +11,32 @@ public class ReadFile {
 
 	static Logger myLog = Logger.getLogger(ReadFile.class.getName());
 	
-	public static Map<String, Object> getDatiAmazonDaFile(String filePath) {
+	private ReadFile() {
+	    throw new IllegalStateException("Utility class");
+	}
+	
+	public static Map<String, Object> getDataFromFile(String filePath) {
 		
-		Map<String, Object> datiAmazon = new HashMap<String, Object>();
+		Map<String, Object> amazonData = new HashMap<String, Object>();
 		
 	    try {
 			File myObj = new File(filePath);
-			String isfileEsistente = Boolean.toString(myObj.exists());
-			myLog.info(isfileEsistente);
+			String isFileExists= Boolean.toString(myObj.exists());
+			myLog.info(isFileExists);
 	        Scanner myReader = new Scanner(myObj);
 	        while (myReader.hasNextLine()) {
 	          String data = myReader.nextLine();
-	          String chiave = data.split("=",2)[0];  // n=2 indica il limit, questo split sarà effettuato una sola volta n-1
-	          String valore = data.split("=",2)[1];
-	          datiAmazon.put(chiave, valore);
+	          String key = data.split("=",2)[0];  // n=2 is the limit
+	          String value = data.split("=",2)[1];
+	          amazonData.put(key, value);
 	        }
 	        myReader.close();
 	      } catch (FileNotFoundException e) {
-	        myLog.info("Errore nella lettura del file" + e.toString());
+	        myLog.info("Error during file reading" + e.toString());
 	        e.printStackTrace();
 	      }
 		
-	    return datiAmazon;
+	    return amazonData;
 	}
 
 }

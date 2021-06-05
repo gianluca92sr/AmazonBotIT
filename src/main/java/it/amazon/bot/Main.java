@@ -9,8 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 
-import it.amazon.bot.util.AzioniDOM;
-import it.amazon.bot.util.MailOrdine;
+import it.amazon.bot.util.DomActions;
 import it.amazon.bot.util.ReadFile;
 
 public class Main {
@@ -19,51 +18,45 @@ public class Main {
 		
 		Logger myLog = Logger.getLogger(Main.class.getName());
 		
-		//Prendo dati necessari dal file txt
+		//Take data from TXT file
 		String filePath = args[0];
-		Map<String, Object> datiAmazon = ReadFile.getDatiAmazonDaFile(filePath);
+		Map<String, Object> amazonData = ReadFile.getDataFromFile(filePath);
 
-		//Carico il driver per Chrome
+		//Driver Chrome
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
-		//Carico il mio profilo per evitare email / sms di sicurezza
+		//Optional Google account for Chrome
 		ChromeOptions options = new ChromeOptions();
-		if (datiAmazon.get("GOOGLE") != null && datiAmazon.get("GOOGLE").toString().equals("SI")) {
-			options.addArguments("user-data-dir=" + datiAmazon.get("PATH_GOOGLE").toString());
+		if (amazonData.get("GOOGLE") != null && amazonData.get("GOOGLE").toString().equals("SI")) {
+			options.addArguments("user-data-dir=" + amazonData.get("PATH_GOOGLE").toString());
 		}
 		
-		//Incognito per limitare fenomeni di caching
 		options.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
 		options.setCapability("chrome.switches", Arrays.asList("--incognito"));
 		
-		//Apro un'istanza del driver con le opzioni desiderate
+		//Driver options
 		WebDriver driver = new ChromeDriver(options);
 		
-		//Apro link dell'oggetto che si vuole monitorare
+		//Open link to track
 		try {
-			driver.get(datiAmazon.get("OGGETTO_URL").toString());
+			driver.get(amazonData.get("URL").toString());
 		}catch (Exception e) {
-			myLog.info("Errore nell'apertura del browser " + e);
+			myLog.info("Error during Chrome opening " + e);
 		}
 
-		//Classe che contiene tutte le azioni da effettuare sul DOM
-		AzioniDOM dom = new AzioniDOM();
-		boolean isAmazonPrezzoOK = dom.isPrezzoAmazonOK(Integer.parseInt((String) datiAmazon.get("PREZZO_MASSIMO")), driver);
+		//Class with DOM methods
+		DomActions dom = new DomActions();
+		boolean isAmazonPriceOK = dom.isAmazonPriceOK(Integer.parseInt((String) amazonData.get("MAX_PRICE")), driver);
 		
-		//Se il prezzo è giusto e il venditore/spedizioniere è Amazon allora lo aggiunge al carrello
-		if(isAmazonPrezzoOK)
-			dom.aggiungiAlCarrello(driver);
+		if(isAmazonPriceOK)
+			dom.addToBasket(driver);
 		
-		//Invia una mail per far avvertire l'acquirente e per concludere la fase finale d'acquisto
-//		MailOrdine mail = new MailOrdine();
-//		mail.invioMailOrdine(datiAmazon);
-		
-		//Skippa offerta Prime se presente
+		//Skip prime offer
 		dom.skipPrime(driver);
 		
-		//Arriva alla fase di pagamento dell'ordine
-		dom.procediOrdine(driver, datiAmazon);
-		System.out.println("Ordine effettuato");
+		//Proced to order
+		dom.makeOrder(driver, amazonData);
+		myLog.info("Order Confirmed");
 	}
 
 }

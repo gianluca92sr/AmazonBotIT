@@ -1,0 +1,8 @@
+GOOGLE=NO
+PATH_GOOGLE= example C:\\Users\\paolo\\AppData\\Local\\Google\\Chrome\\User Data Selenium
+EMAIL-GMAIL=
+PASS-GMAIL=
+EMAIL-AMAZON=
+PASS-AMAZON=
+URL=
+MAX_PRICE= example 30 only integer
