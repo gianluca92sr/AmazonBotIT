@@ -1,5 +1,5 @@
 GOOGLE=NO (default)
-PATH_GOOGLE= example C:\\Users\\paolo\\AppData\\Local\\Google\\Chrome\\User Data Selenium
+PATH_GOOGLE= (optional - beta, if GOOGLE set to YES) C:\\Users\\paolo\\AppData\\Local\\Google\\Chrome\\User Data Selenium
 EMAIL-GMAIL= (optional - beta)
 PASS-GMAIL= (optional - beta)
 EMAIL-AMAZON=
