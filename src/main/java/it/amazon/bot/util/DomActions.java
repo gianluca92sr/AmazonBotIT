@@ -93,7 +93,7 @@ public class DomActions {
 
 		try {
 			hold(1);
-			driver.findElement(By.id("add-to-cart-button")).click();
+			driver.findElement(By.xpath("//*[@id=\"add-to-cart-button\"]")).click();
 			hold(1);
 		}catch (Exception e) {
 			
@@ -142,7 +142,7 @@ public class DomActions {
 		}
 		
 		try {
-			hold(2);
+			hold(1);
 			driver.findElement(By.id("hlb-view-cart-announce")).click();
 		} catch (Exception e) {
 

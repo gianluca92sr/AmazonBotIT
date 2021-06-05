@@ -32,6 +32,7 @@ public class Main {
 		}
 		
 		options.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
+		options.addArguments("--start-maximized");
 		options.setCapability("chrome.switches", Arrays.asList("--incognito"));
 		
 		//Driver options
