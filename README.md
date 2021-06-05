@@ -15,7 +15,7 @@ My job is on enterprise code developing.
 
 For being part of open source projects and documenting my work here I really do not charge anything. I am trying to avoid any type of ads also.
 
-If you think that any information you obtained here is worth of some money and are willing to pay for it, feel free to send any amount through paypal or bitcoin.
+If you think that any information you obtained here is worth of some money and are willing to pay for it, feel free to send any amount through PayPal or BinancePay.
 
 <table style="max-width: 50%;">
   <thead>
