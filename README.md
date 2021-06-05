@@ -1,7 +1,10 @@
 # AmazonBotIT
-A new Amazon Bot for amazon.it
+A new Amazon Bot for amazon.it. You can track a product and get it when available.
 
-GUIDE
+Requirements
+ChromeDriver for Selenium 
+
+How to Install
 1. Download the correct version of chromeDriver if the program won't start
 2. Fill the txt file
 3. Start the program
