@@ -7,11 +7,7 @@ ChromeDriver for Selenium, the provided one is compatible with Chrome 91
 
 # Guide
 
-<a class="d-flex flex-items-center color-text-primary text-bold no-underline p-3" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;DOWNLOAD_ZIP&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:333585221,&quot;originating_url&quot;:&quot;https://github.com/gianluca92sr/AmazonBotIT&quot;,&quot;user_id&quot;:61836648}}" data-hydro-click-hmac="d2bbca9e405dcd01e4d3cd78a05d37046836ecdec4d4b894ff58fba6557637f1" data-ga-click="Repository, download zip, location:repo overview" data-open-app="link" href="/gianluca92sr/AmazonBotIT/archive/refs/heads/main.zip">
-                Download ZIP
-</a>
-
-1. <a href="/gianluca92sr/AmazonBotIT/archive/refs/heads/main.zip">Download ZIP</a> and extract it in your favorite folder
+1. Download ZIP and extract it in your favorite folder
 2. Download the correct version of chromeDriver if the program won't start <a href="https://chromedriver.chromium.org/downloads">ChromeDriverDownloads</a> and add it into the previous folder
 3. Fill the txt file
 4. Start the LaunchBat.bat file (compatible only with amazon.it, if you want other amazon you have to adapt the souce code)
