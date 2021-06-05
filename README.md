@@ -1,5 +1,5 @@
 # AmazonBotIT
-A new Amazon Bot for amazon.it. You can track a product and get it when available.
+A new Amazon Bot for amazon.it. You can track a product and get it when is available.
 
 # Requirements
 
