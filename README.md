@@ -9,7 +9,7 @@ ChromeDriver for Selenium, the provided one is compatible with Chrome 91
 1. Download ZIP and extract it in your favorite folder
 2. Download the correct version of chromeDriver if the program won't start <a href="https://chromedriver.chromium.org/downloads">ChromeDriverDownloads</a> and add it into the previous folder
 3. Fill the txt file
-4. Start the LaunchBat.bat file (compatible only with amazon.it, if you want other amazon you have to adapt the souce code)
+4. Start the LaunchBat.bat file (compatible only with amazon.it, if you want other amazon you have to adapt the source code)
 5. BETA - You can create different folders cotaining the files downloaded and unzipped previously, then change the URL in each .txt file and launch all the .bat files created. In this way you can track multiple items at the same time.
 
 # Donations
