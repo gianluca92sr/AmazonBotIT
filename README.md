@@ -8,7 +8,7 @@ ChromeDriver for Selenium, the provided one is compatible with Chrome 91
 # Guide
 1. Download the correct version of chromeDriver if the program won't start <a href="https://chromedriver.chromium.org/downloads">ChromeDriverDownloads</a>
 2. Fill the txt file
-3. Start the jar file
+3. Start the jar file (compatible only with amazon.it, if you want other amazon you have to adapt the souce code)
 
 # Donations
 My job is on enterprise code developing.
