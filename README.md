@@ -6,7 +6,6 @@ A new Amazon Bot for amazon.it. You can track a product and get it when is avail
 ChromeDriver for Selenium, the provided one is compatible with Chrome 91
 
 # Guide
-<a href="http://github.com/gianluca92sr/AmazonBotIT/zipball/main.zip">d</a>
 1. Download ZIP and extract it in your favorite folder
 2. Download the correct version of chromeDriver if the program won't start <a href="https://chromedriver.chromium.org/downloads">ChromeDriverDownloads</a> and add it into the previous folder
 3. Fill the txt file
